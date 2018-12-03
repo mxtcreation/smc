@@ -1,0 +1,12 @@
+diff -Naur a/X11/Xsession b/X11/Xsession
+--- a/X11/Xsession	2017-04-21 15:10:10.508760480 +0200
++++ b/X11/Xsession	2017-04-21 15:10:46.008808686 +0200
+@@ -35,7 +35,7 @@
+ # Can't use run-parts like this, busybox doesn't support it. Use ls instead
+ #SESSIONFILES=$(run-parts --list $SYSSESSIONDIR)
+ 
+-SESSIONFILES=`ls -X $SYSSESSIONDIR`
++SESSIONFILES=`/bin/ls -X $SYSSESSIONDIR`
+ if [ -n "$SESSIONFILES" ]; then
+   for SESSIONFILE in $SESSIONFILES; do
+   # Test if script is executable first before sourcing it
